@@ -365,6 +365,115 @@ a { color: inherit; text-decoration: none; }
     color: rgba(255,255,255,0.5);
 }
 
+/* Gallery */
+.gallery { background: var(--paper); }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+}
+.gallery-item {
+    position: relative;
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(34,48,41,0.35) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery-item:hover::after { opacity: 1; }
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 26, 23, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 2rem;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 82vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+.lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.28); }
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.28); }
+.lightbox-prev { left: 1.25rem; }
+.lightbox-next { right: 1.25rem; }
+.lightbox-counter {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+@media (max-width: 800px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .lightbox-nav { width: 40px; height: 40px; font-size: 1.4rem; }
+    .lightbox-prev { left: 0.6rem; }
+    .lightbox-next { right: 0.6rem; }
+}
+@media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+}
+
 /* Responsive */
 .hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--green-800); padding: 0.4rem; }
 @media (max-width: 800px) {
@@ -404,6 +513,7 @@ a { color: inherit; text-decoration: none; }
         <nav class="header-nav" id="nav">
             <a href="#about">About</a>
             <a href="#objectives">Our Work</a>
+            <a href="#gallery">Gallery</a>
             <a href="#values">Values</a>
             <a href="#contact" class="nav-cta">Get in touch</a>
         </nav>
@@ -522,6 +632,33 @@ a { color: inherit; text-decoration: none; }
         </div>
     </section>
 
+    <section class="section gallery" id="gallery">
+        <div class="section-inner">
+            <div class="section-head">
+                <span class="kicker">Gallery</span>
+                <h2>Our work in pictures</h2>
+                <p>A glimpse of the programs and communities we serve.</p>
+            </div>
+            <div class="gallery-grid">
+                <button type="button" class="gallery-item" data-index="0" aria-label="Open gallery image 1">
+                    <img src="assets/gallery/gallery-1.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="1" aria-label="Open gallery image 2">
+                    <img src="assets/gallery/gallery-2.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="2" aria-label="Open gallery image 3">
+                    <img src="assets/gallery/gallery-3.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="3" aria-label="Open gallery image 4">
+                    <img src="assets/gallery/gallery-4.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="4" aria-label="Open gallery image 5">
+                    <img src="assets/gallery/gallery-5.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-band" id="contact">
         <h2>Partner with us</h2>
         <p>Whether you're a donor, a volunteer or a community leader, we'd love to hear from you and build community wellness together.</p>
@@ -560,11 +697,66 @@ a { color: inherit; text-decoration: none; }
     </div>
 </footer>
 
+<div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">‹</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">›</button>
+    <span class="lightbox-counter" id="lightbox-counter"></span>
+</div>
+
 <script>
 document.getElementById('hamburger').addEventListener('click', function () {
     document.getElementById('nav').classList.toggle('open');
 });
 document.getElementById('year').textContent = new Date().getFullYear();
+
+(function () {
+    var items = Array.from(document.querySelectorAll('.gallery-item'));
+    if (!items.length) return;
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var counter = document.getElementById('lightbox-counter');
+    var current = 0;
+
+    function show(i) {
+        current = (i + items.length) % items.length;
+        var img = items[current].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        counter.textContent = (current + 1) + ' / ' + items.length;
+    }
+    function open(i) {
+        show(i);
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+    }
+    function close() {
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    items.forEach(function (item) {
+        item.addEventListener('click', function () {
+            open(parseInt(item.dataset.index, 10));
+        });
+    });
+
+    document.getElementById('lightbox-close').addEventListener('click', close);
+    document.getElementById('lightbox-prev').addEventListener('click', function () { show(current - 1); });
+    document.getElementById('lightbox-next').addEventListener('click', function () { show(current + 1); });
+
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+    });
+})();
 </script>
 </body>
 </html>
