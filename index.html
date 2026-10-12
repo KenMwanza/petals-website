@@ -401,6 +401,29 @@ a { color: inherit; text-decoration: none; }
 }
 .gallery-item:hover::after { opacity: 1; }
 
+/* Videos */
+.videos-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    justify-items: center;
+}
+.video-item {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.video-item video {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 14px;
+    background: #000;
+    display: block;
+    box-shadow: 0 10px 28px rgba(34,48,41,0.12);
+}
+
 /* Lightbox */
 .lightbox {
     position: fixed;
@@ -466,6 +489,7 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 800px) {
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .videos-row { grid-template-columns: 1fr; }
     .lightbox-nav { width: 40px; height: 40px; font-size: 1.4rem; }
     .lightbox-prev { left: 0.6rem; }
     .lightbox-next { right: 0.6rem; }
@@ -655,6 +679,29 @@ a { color: inherit; text-decoration: none; }
                 <button type="button" class="gallery-item" data-index="4" aria-label="Open gallery image 5">
                     <img src="assets/gallery/gallery-5.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
                 </button>
+                <button type="button" class="gallery-item" data-index="5" aria-label="Open gallery image 6">
+                    <img src="assets/gallery/gallery-6.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="6" aria-label="Open gallery image 7">
+                    <img src="assets/gallery/gallery-7.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="7" aria-label="Open gallery image 8">
+                    <img src="assets/gallery/gallery-8.jpg" alt="Petals Community Empowerment Foundation program in the community" loading="lazy">
+                </button>
+            </div>
+            <div class="videos-row">
+                <figure class="video-item">
+                    <video controls preload="none" poster="assets/videos/video-1.jpg" playsinline>
+                        <source src="assets/videos/video-1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
+                <figure class="video-item">
+                    <video controls preload="none" poster="assets/videos/video-2.jpg" playsinline>
+                        <source src="assets/videos/video-2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
             </div>
         </div>
     </section>
