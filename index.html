@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petals Community Empowerment Foundation — Building Community Wellness Through a Holistic Approach</title>
+<meta name="description" content="Petals Community Empowerment Foundation works to establish sustainable water supply systems, rehabilitate sanitation facilities, provide nutrition education, enhance educational access and implement healthcare programs for community wellness.">
+<meta property="og:title" content="Petals Community Empowerment Foundation">
+<meta property="og:description" content="Building Community Wellness Through a Holistic Approach — water, sanitation, nutrition, education and healthcare for stronger communities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://petals.or.ke/">
+<meta property="og:image" content="https://petals.or.ke/assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --green-900: #223029;
+    --green-800: #2b3a35;
+    --green-700: #3a4f44;
+    --green-600: #4d6b59;
+    --sage: #75897f;
+    --sage-light: #e7ece8;
+    --peach: #ffc89d;
+    --peach-strong: #e8a87c;
+    --ink: #223029;
+    --paper: #fbfaf7;
+    --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* Header */
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid #eef1ec;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+.header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.brand img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+}
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+.brand-text .name {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--green-800);
+    letter-spacing: -0.01em;
+}
+.brand-text .tag {
+    font-size: 0.72rem;
+    color: var(--sage);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.header-nav {
+    display: flex;
+    gap: 1.75rem;
+    align-items: center;
+}
+.header-nav a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green-700);
+    transition: color 0.15s ease;
+}
+.header-nav a:hover { color: var(--green-900); }
+.nav-cta {
+    background: var(--green-800);
+    color: #fff !important;
+    padding: 0.55rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: background 0.15s ease;
+}
+.nav-cta:hover { background: var(--green-900); }
+
+/* Hero */
+.hero {
+    background: linear-gradient(160deg, var(--green-800) 0%, var(--green-700) 60%, var(--green-600) 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -120px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,200,157,0.18) 0%, rgba(255,200,157,0) 70%);
+}
+.hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 5.5rem;
+    position: relative;
+    z-index: 1;
+}
+.hero-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--peach);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+}
+.hero h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 20ch;
+    letter-spacing: -0.01em;
+}
+.hero h1 .highlight { color: var(--peach); }
+.hero .sub {
+    margin-top: 1.25rem;
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.88);
+    max-width: 60ch;
+}
+.hero-actions {
+    margin-top: 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.btn-primary {
+    background: var(--peach);
+    color: var(--green-900);
+}
+.btn-primary:hover { background: #ffd4ae; transform: translateY(-1px); }
+.btn-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.4);
+}
+.btn-ghost:hover { border-color: #fff; }
+
+/* Sections */
+.section { padding: 4.5rem 1.5rem; }
+.section-inner { max-width: 1120px; margin: 0 auto; }
+.section-head { max-width: 640px; margin-bottom: 2.75rem; }
+.section-head .kicker {
+    color: var(--green-600);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.section-head h2 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+    font-weight: 700;
+    color: var(--green-900);
+    line-height: 1.2;
+}
+.section-head p { margin-top: 0.9rem; color: #4a5a50; font-size: 1.05rem; }
+
+/* Philosophy */
+.philosophy { background: var(--white); border-top: 1px solid #eef1ec; border-bottom: 1px solid #eef1ec; }
+.philosophy-card {
+    background: var(--green-800);
+    color: #fff;
+    border-radius: 18px;
+    padding: 2.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+.philosophy-card::before {
+    content: "";
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,200,157,0.16) 0%, rgba(255,200,157,0) 70%);
+}
+.philosophy-card .quote {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.35;
+    max-width: 22ch;
+    position: relative;
+    z-index: 1;
+}
+.philosophy-card .quote em { color: var(--peach); font-style: italic; }
+
+/* Objectives */
+.objectives { background: var(--paper); }
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.obj-card {
+    background: var(--white);
+    border: 1px solid #e8ece7;
+    border-radius: 16px;
+    padding: 1.9rem 1.7rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.obj-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(34,48,41,0.08);
+}
+.obj-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    background: var(--sage-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    color: var(--green-700);
+}
+.obj-icon svg { width: 26px; height: 26px; }
+.obj-card .num {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    text-transform: uppercase;
+}
+.obj-card h3 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--green-900);
+    margin-top: 0.35rem;
+    line-height: 1.3;
+}
+
+/* Core values */
+.values { background: var(--white); border-top: 1px solid #eef1ec; }
+.values-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+.value-chip {
+    background: var(--sage-light);
+    color: var(--green-700);
+    padding: 0.65rem 1.3rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.value-chip:hover { background: var(--green-800); color: #fff; }
+
+/* Contact / footer CTA */
+.cta-band {
+    background: var(--green-800);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}
+.cta-band h2 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+}
+.cta-band p { color: rgba(255,255,255,0.85); max-width: 52ch; margin: 0 auto 1.75rem; }
+.cta-band .btn-primary { margin: 0 auto; }
+
+/* Footer */
+.site-footer {
+    background: var(--green-900);
+    color: rgba(255,255,255,0.7);
+    padding: 3rem 1.5rem;
+}
+.footer-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.footer-brand .logo-chip {
+    display: inline-block;
+    background: #fff;
+    padding: 0.6rem 0.9rem;
+    border-radius: 12px;
+    margin-bottom: 0.9rem;
+}
+.footer-brand img { height: 38px; width: auto; display: block; }
+.footer-brand p { font-size: 0.9rem; max-width: 36ch; }
+.footer-col h4 {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.55rem; }
+.footer-col a { font-size: 0.92rem; color: rgba(255,255,255,0.7); }
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+    max-width: 1120px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Responsive */
+.hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--green-800); padding: 0.4rem; }
+@media (max-width: 800px) {
+    .header-nav { display: none; }
+    .hamburger { display: block; }
+    .header-nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.25rem 1.5rem;
+        box-shadow: 0 12px 24px rgba(34,48,41,0.1);
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    .brand-text .name { font-size: 0.95rem; }
+    .brand img { height: 40px; }
+    .hero-inner { padding: 3.5rem 1.5rem 4rem; }
+    .section { padding: 3.25rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner" style="position: relative;">
+        <a href="#top" class="brand">
+            <img src="assets/logo.png" alt="Petals Community Empowerment Foundation logo">
+            <span class="brand-text">
+                <span class="name">Petals Community Empowerment Foundation</span>
+                <span class="tag">Building community wellness</span>
+            </span>
+        </a>
+        <nav class="header-nav" id="nav">
+            <a href="#about">About</a>
+            <a href="#objectives">Our Work</a>
+            <a href="#values">Values</a>
+            <a href="#contact" class="nav-cta">Get in touch</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <svg width="22" height="18" viewBox="0 0 22 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="1" y1="1.5" x2="21" y2="1.5"/>
+                <line x1="1" y1="9" x2="21" y2="9"/>
+                <line x1="1" y1="16.5" x2="21" y2="16.5"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<main id="top">
+    <section class="hero">
+        <div class="hero-inner">
+            <span class="hero-eyebrow">Community Empowerment Foundation</span>
+            <h1>Building <span class="highlight">Community Wellness</span> Through a Holistic Approach</h1>
+            <p class="sub">We partner with communities to deliver clean water, safe sanitation, better nutrition, education and healthcare — because lasting wellbeing grows from the roots up.</p>
+            <div class="hero-actions">
+                <a href="#objectives" class="btn btn-primary">Explore our work</a>
+                <a href="#about" class="btn btn-ghost">Learn about us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy" id="about">
+        <div class="section-inner">
+            <div class="section-head">
+                <span class="kicker">Our philosophy</span>
+                <h2>Wellness is more than the absence of illness.</h2>
+            </div>
+            <div class="philosophy-card">
+                <p class="quote">Building <em>Community Wellness</em> Through a <em>Holistic Approach</em> — addressing the whole person and the whole community, together.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section objectives" id="objectives">
+        <div class="section-inner">
+            <div class="section-head">
+                <span class="kicker">What we do</span>
+                <h2>Our objectives</h2>
+                <p>Five focus areas that together build a foundation for healthy, self-reliant communities.</p>
+            </div>
+            <div class="objectives-grid">
+                <div class="obj-card">
+                    <div class="obj-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2.7c3.4 4.1 6.3 7.5 6.3 11.1a6.3 6.3 0 0 1-12.6 0C5.7 10.2 8.6 6.8 12 2.7z"/>
+                        </svg>
+                    </div>
+                    <span class="num">Objective 01</span>
+                    <h3>Establish sustainable water supply systems</h3>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="3" width="14" height="18" rx="3"/>
+                            <path d="M9 3v2M15 3v2M9 13h6"/>
+                        </svg>
+                    </div>
+                    <span class="num">Objective 02</span>
+                    <h3>Construct and rehabilitate sanitation facilities</h3>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21c-4.4-3.2-7-6-7-9a7 7 0 0 1 14 0c0 3-2.6 5.8-7 9z"/>
+                            <path d="M12 3v-1.5M5.5 8h-.5M18.5 8h-.5"/>
+                        </svg>
+                    </div>
+                    <span class="num">Objective 03</span>
+                    <h3>Provide nutrition education</h3>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H21v15H6.5A2.5 2.5 0 0 1 4 15.5v-10z"/>
+                            <path d="M4 15.5A2.5 2.5 0 0 1 6.5 13H21M9 7h6"/>
+                        </svg>
+                    </div>
+                    <span class="num">Objective 04</span>
+                    <h3>Enhance educational access and quality</h3>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21s-7-4.35-9.5-9C.5 7.5 3 4 6.5 4c2 0 3.5 1 4.5 2.5C12 5 13.5 4 15.5 4 19 4 21.5 7.5 21.5 12c-2.5 4.65-9.5 9-9.5 9z"/>
+                            <path d="M5 12h.01M19 12h.01"/>
+                        </svg>
+                    </div>
+                    <span class="num">Objective 05</span>
+                    <h3>Implement healthcare programs</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section values" id="values">
+        <div class="section-inner">
+            <div class="section-head">
+                <span class="kicker">What guides us</span>
+                <h2>Our core values</h2>
+            </div>
+            <div class="values-wrap">
+                <span class="value-chip">Community</span>
+                <span class="value-chip">Inclusivity</span>
+                <span class="value-chip">Innovation</span>
+                <span class="value-chip">Sustainability</span>
+                <span class="value-chip">Integrity</span>
+                <span class="value-chip">Conservation of environment</span>
+                <span class="value-chip">Respect</span>
+                <span class="value-chip">Impact</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-band" id="contact">
+        <h2>Partner with us</h2>
+        <p>Whether you're a donor, a volunteer or a community leader, we'd love to hear from you and build community wellness together.</p>
+        <a href="mailto:hello@petals.or.ke" class="btn btn-primary">Get in touch</a>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="logo-chip"><img src="assets/logo.png" alt="Petals Community Empowerment Foundation logo"></span>
+            <p>Building Community Wellness Through a Holistic Approach.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Our work</h4>
+            <ul>
+                <li><a href="#objectives">Water supply</a></li>
+                <li><a href="#objectives">Sanitation</a></li>
+                <li><a href="#objectives">Nutrition</a></li>
+                <li><a href="#objectives">Education</a></li>
+                <li><a href="#objectives">Healthcare</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Foundation</h4>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#values">Core values</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© <span id="year"></span> Petals Community Empowerment Foundation. All rights reserved.</span>
+        <span>petals.or.ke</span>
+    </div>
+</footer>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function () {
+    document.getElementById('nav').classList.toggle('open');
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
